@@ -1,0 +1,9 @@
+Cliente: Mario
+Dirección: Carrera 9
+----------------
+Hamburguesa
+            20000
+----------------
+Precio Neto:  20000
+IVA:          3800
+Precio Total: 23800
