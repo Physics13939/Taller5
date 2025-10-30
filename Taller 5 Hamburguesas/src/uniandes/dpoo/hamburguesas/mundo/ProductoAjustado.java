@@ -29,8 +29,8 @@ public class ProductoAjustado implements Producto
     public ProductoAjustado( ProductoMenu productoBase )
     {
         this.productoBase = productoBase;
-        agregados = new ArrayList<Ingrediente>( );
-        eliminados = new ArrayList<Ingrediente>( );
+        setAgregados(new ArrayList<Ingrediente>( ));
+        setEliminados(new ArrayList<Ingrediente>( ));
     }
 
     @Override
@@ -58,12 +58,12 @@ public class ProductoAjustado implements Producto
     {
         StringBuffer sb = new StringBuffer( );
         sb.append( productoBase );
-        for( Ingrediente ing : agregados )
+        for( Ingrediente ing : getAgregados() )
         {
             sb.append( "    +" + ing.getNombre( ) );
             sb.append( "                " + ing.getCostoAdicional( ) );
         }
-        for( Ingrediente ing : eliminados )
+        for( Ingrediente ing : getEliminados() )
         {
             sb.append( "    -" + ing.getNombre( ) );
         }
@@ -72,5 +72,21 @@ public class ProductoAjustado implements Producto
 
         return sb.toString( );
     }
+
+	public ArrayList<Ingrediente> getAgregados() {
+		return agregados;
+	}
+
+	public void setAgregados(ArrayList<Ingrediente> agregados) {
+		this.agregados = agregados;
+	}
+
+	public ArrayList<Ingrediente> getEliminados() {
+		return eliminados;
+	}
+
+	public void setEliminados(ArrayList<Ingrediente> eliminados) {
+		this.eliminados = eliminados;
+	}
 
 }
